@@ -19,6 +19,12 @@
 
 <script>
     function getFibonacci(n){
+        if(n < 0){
+            return "Cannot do negatives right now."
+        }
+        else if(n > 10000){
+            return "This number is too large."
+        }
         let i = 0
         let arr = [0, 1]
         if (n == 0 || n == 1){
