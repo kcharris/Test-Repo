@@ -1,18 +1,41 @@
 <!DOCTYPE html>
-
-<title>Fibonacci Calculator</title>
+<head>
+    <title>Fibonacci Calculator</title>
+    
+</head>
 
 <body>
 <h1>Fibonacci Calculator</h1>
 <br>
 <div>
-    <form action="index.html" method="get">
+    <form action=index.html method="get">
         <label>Enter the fibonacci number you want to get: </label>
         <input type="number" name="input" required>
         <input type="submit" value="Enter Number">
     </form>
     <h3>The output is below.</h3>
+    <h2 id="result"></h2>
 </div>
 
-
+<script>
+    function getFibonacci(n){
+        let i = 0
+        let arr = [0, 1]
+        if (n == 0 || n == 1){
+            return arr[n]
+        }
+        while(i < n){
+            arr[i%2] = arr[0] + arr[1]
+            i++
+        }
+        return arr[i%2]
+    }
+    let n = "-----"
+    let urlParams = new URLSearchParams(window.location.search)
+    if(urlParams.has("input")){
+        n = getFibonacci(Number(urlParams.get("input")))
+    }
+    
+    document.getElementById("result").textContent = n
+</script>
 </body>
