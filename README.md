@@ -1,6 +1,6 @@
 "# Test-Repo" 
 
-#Fibonacci Number Calculator
+<h3>Fibonacci Number Calculator</h3>
 
 This project is an html file that uses javascript to allow the user to figure out fibonacci numbers using a simple interface.
 
